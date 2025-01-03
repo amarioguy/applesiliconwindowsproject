@@ -2,6 +2,10 @@
 
 Keeping things simple, the goal is to hopefully run Windows on Apple's M1 and M2 chips (and hopefully future Apple silicon chips too given tweaks to the foundation!).
 
+## Update (1/2/2025)
+
+Still very much hard at work on the project, however this GitHub pages site is deprecated in favor of posting updates at the official [AppleWOA organization page](https://github.com/AppleWOA) repositories so please check there for any status updates on this project. The below is being preserved for archival purposes - however this website should not be seen as active regarding progress updates.
+
 ### Update (8/22/22)
 
 I've been working a lot on the UEFI code as of late, and that repository was private for a while (just made it public as of 8/22/22), and it's been a lot of work as I had to figure out EFI conventions and how the build system worked before debugging many issues I had along the way (it's not even done yet as of 8/22/22 but it was long overdue for the code to go public)
@@ -16,11 +20,7 @@ AIC driver work has also started, ANS2 will be started soon enough as well. I'd 
 
 Contrary to how it may appear on the surface, Apple's chips are architecturally very different from standard ARM64 chips from companies like Qualcomm or MediaTek and a lot of hardware enablement needs to be done as a result. Thankfully a lot of work has already been done in this area for Linux through the Asahi Linux project (huge thanks to them for all the hard work they've done and made open source please show them some support!), though plenty of work remains to be done since Windows does some things differently from Linux and there are things the Asahi folks can ignore but I cannot.
 
-~~(An example: The Asahi Linux folks can't use PSCI, the ARM standard for core bringup, for starting the other ARM cores since they plan to run Linux in EL2 and Apple does not implement EL3. Windows requires PSCI, and this combined with other circumstances means I'll need to get PSCI working on the Apple cores.)~~ No longer true, the Asahi folks have confirmed that PSCI support is coming to Asahi in the near future, but the point still stands.
-
-### TL;DR on current status
-
-Working on vGIC distributor/redistributor initialization and handling code, and EFI code
+(An example: The Asahi Linux folks can't use PSCI, the ARM standard for core bringup, for starting the other ARM cores since they plan to run Linux in EL2 and Apple does not implement EL3. Windows requires PSCI, and this combined with other circumstances means I'll need to get PSCI working on the Apple cores.) ~~No longer true, the Asahi folks have confirmed that PSCI support is coming to Asahi in the near future, but the point still stands.~~
 
 ### When will the project be done?
 
